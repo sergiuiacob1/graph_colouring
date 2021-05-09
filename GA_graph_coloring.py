@@ -101,8 +101,8 @@ def solveGA(graph: nx.Graph):
     for i in range(numGenerations):
         print(f"Generation {i}")
         print(f'Colors: {numColors}')
-        if (population[0]['fitness']<=graph.number_of_nodes()*numColors):
-            numColors-=1
+        if best!={} and best['feasible']==True:
+            numColors=len(set(best['chromosome']))
         
         newPopulation=[]
         while len(newPopulation)<numOffsprings:

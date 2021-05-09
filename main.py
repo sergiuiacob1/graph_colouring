@@ -47,7 +47,7 @@ def main():
 
     print("Start coloring...")
     for graph, optimal_coloring in zip(graphs, optimal_colorings):
-        methods = ["ACO"]
+        methods = ["ACO","GA"]
         for method in methods:
             print(f"Coloring {graph.name} with {method}")
             (execution_time, solve_result) = solve_with_method(
