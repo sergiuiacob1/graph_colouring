@@ -79,8 +79,6 @@ def crossover(graph, chromosome1, chromosome2, feasible1):
     return newChromosome2
     
 
-
-
 def solveGA(graph: nx.Graph):
     mutationProb=0.05
     crossoverProb=0.8
@@ -90,7 +88,6 @@ def solveGA(graph: nx.Graph):
     initialColors=[i for i in range(1,graph.number_of_nodes()+1)]
     population=[]
     best={}
-    print(f"GRAPH EDGES: {str(graph.edges())}")
     for _i in range(popSize):
         random.shuffle(initialColors)
         fitness_feasible = getFitness(graph, initialColors)
@@ -116,8 +113,6 @@ def solveGA(graph: nx.Graph):
                 fitness_feasible = getFitness(graph, newChromosome)
                 newPopulation.append({'chromosome': newChromosome, 'fitness': fitness_feasible[0], 'feasible': fitness_feasible[1], 'iteration': i})
             
-            #print("Done with crossover")
-
             ind = random.randrange(popSize//2+1,popSize)
             mutationChromosome = population[ind]['chromosome']
             fitness = population[ind]['fitness']
@@ -127,8 +122,6 @@ def solveGA(graph: nx.Graph):
                 newChromosome = mutation(graph, mutationChromosome, fitness, feasible)
                 fitness_feasible = getFitness(graph, newChromosome)
                 newPopulation.append({'chromosome': newChromosome, 'fitness': fitness_feasible[0], 'feasible': fitness_feasible[1], 'iteration': i})
-
-            #print("Done with mutation")
 
         population=[]
         last=[]
