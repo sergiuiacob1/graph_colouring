@@ -47,7 +47,7 @@ def main():
 
     print("Start coloring...")
     for i, (graph, optimal_coloring) in enumerate(zip(graphs, optimal_colorings)):
-        methods = ["ACO"]
+        methods = ["ACO", "GA"]
         for method in methods:
             print(f"Coloring {graph.name} with {method}, {i}/{len(graphs)}")
             (execution_time, solve_result) = solve_with_method(
