@@ -22,7 +22,7 @@ def solve_with_method(graph: nx.Graph, max_iter: int, method: str):
 
 
 def solve_with_aco(graph: nx.Graph, max_iter: int):
-    return solve(graph, iter=max_iter, num_ants=10)
+    return solveACO(graph, iter=max_iter, num_ants=10)
 
 
 def solve_with_ga(graph: nx.Graph, max_iter: int):
