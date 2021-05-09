@@ -3,7 +3,8 @@ import time
 import networkx as nx
 import matplotlib.pyplot as plt
 from test_graphs import get_test_graphs
-from ACO_graph_colouring import *
+from ACO_graph_colouring import solveACO, draw_graph
+from GA_graph_coloring import solveGA
 
 
 def solve_with_method(graph: nx.Graph, max_iter: int, method: str):
@@ -21,11 +22,11 @@ def solve_with_method(graph: nx.Graph, max_iter: int, method: str):
 
 
 def solve_with_aco(graph: nx.Graph, max_iter: int):
-    return solve(graph, iter=1, num_ants=1) #TODO
+    return solveACO(graph, iter=1, num_ants=1) #TODO
 
 
 def solve_with_ga(graph: nx.Graph, max_iter: int):
-    return None
+    return solveGA(graph)
 
 
 def write_results_to_csv(results):
@@ -45,8 +46,8 @@ def main():
     max_iter = 10
 
     print ("Start coloring...")
-    for graph, optimal_coloring in zip(graphs[2:3], optimal_colorings[2:3]):
-        methods = ["ACO"]
+    for graph, optimal_coloring in zip(graphs[1:2], optimal_colorings[1:2]):
+        methods = ["ACO","GA"]
         for method in methods:
             print(f"Coloring {graph.name} with {method}")
             (execution_time, solve_result) = solve_with_method(graph, max_iter, method)
