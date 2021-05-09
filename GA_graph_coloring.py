@@ -17,28 +17,36 @@ def getFitness(graph: nx.Graph, chromosome: list):
 
 def mutation(graph, chromosome, fitness, feasible):
     if feasible == False:
-        bestChromosome = []
-        bestFitness = -1
         colors = set(chromosome)
+        copyColors = set(chromosome)
         for edge in graph.edges():
             if chromosome[edge[0]] == chromosome[edge[1]]:
-                for color in colors:
-                    if color != chromosome[edge[0]]:
-                        newChromosome = chromosome
-                        newChromosome[edge[0]] = color
-                        newFitness = getFitness(graph, newChromosome)[0]
-                        if newFitness < bestFitness or bestFitness == -1:
-                            bestFitness = newFitness
-                            bestChromosome = newChromosome
-                    if color != chromosome[edge[1]]:
-                        newChromosome = chromosome
-                        newChromosome[edge[1]] = color
-                        newFitness = getFitness(graph, newChromosome)[0]
-                        if newFitness < bestFitness or bestFitness == -1:
-                            bestFitness = newFitness
-                            bestChromosome = newChromosome
-                break
-        return bestChromosome
+                node_index = edge[random.randrange(0,2)]
+                for neighbour in graph.neighbors(node_index):
+                    colors.discard(chromosome[neighbour])
+                # for color in colors:
+                #     if color != chromosome[edge[0]]:
+                #         newChromosome = chromosome
+                #         newChromosome[edge[0]] = color
+                #         newFitness = getFitness(graph, newChromosome)[0]
+                #         if newFitness < bestFitness or bestFitness == -1:
+                #             bestFitness = newFitness
+                #             bestChromosome = newChromosome
+                #     if color != chromosome[edge[1]]:
+                #         newChromosome = chromosome
+                #         newChromosome[edge[1]] = color
+                #         newFitness = getFitness(graph, newChromosome)[0]
+                #         if newFitness < bestFitness or bestFitness == -1:
+                #             bestFitness = newFitness
+                #             bestChromosome = newChromosome
+                # break
+                if len(colors)==0:
+                    max_color=-1
+                    for color in copyColors:
+                        max_color=max(max_color, color)
+                    chromosome[node_index] = max_color+1
+                chromosome[node_index]=random.choice(list(colors))
+                return chromosome
     colors = set(chromosome)
     colorToRemove = random.choice(list(colors))
     colors.remove(colorToRemove)
@@ -79,13 +87,13 @@ def crossover(graph, chromosome1, chromosome2, feasible1):
         return newChromosome1
     return newChromosome2
 
-
+#TODO: selection 25% elitism and 75% roulette wheel
 def solveGA(graph: nx.Graph):
-    mutationProb = 0.05
-    crossoverProb = 0.8
-    popSize = 5000
-    numGenerations = 2000
-    numOffsprings = 70000
+    mutationProb = 0.2
+    crossoverProb = 0.05
+    popSize = 50
+    numGenerations = 20000
+    numOffsprings = 10000
     initialColors = [i for i in range(1, graph.number_of_nodes()+1)]
     population = []
     best = {}
@@ -134,16 +142,26 @@ def solveGA(graph: nx.Graph):
         j = 0
         newPopulation.sort(key=lambda x: (
             x['fitness'], int(x['feasible'] == False)))
+
+        if best == {} or best['fitness'] > newPopulation[0]['fitness']:
+            best = newPopulation[0]
+
         print(
             f"Worst candidate before selection: {str(newPopulation[len(newPopulation)-1])}")
-        while len(population) < popSize:
+        while len(population) < popSize//2:
             if str(newPopulation[j]) != str(last):
                 population.append(newPopulation[j])
                 last = newPopulation[j]
             j += 1
-        if best == {} or best['fitness'] > population[0]['fitness']:
-            best = population[0]
-        print(
-            f"Done with generation {i}.\n\tCurrent generation best: {str(population[0])}\n\tCurrent generation worst: {str(population[popSize-1])}\n\tOverall best so far: {str(best)}")
+        population.append(newPopulation[0])
+        while len(population) < popSize:
+            population.append(newPopulation[random.randrange(popSize//2+1, len(newPopulation))])
+        
+        population.sort(key=lambda x: (
+            x['fitness'], int(x['feasible'] == False)))
+        
+        # print(
+        #     f"Done with generation {i}.\n\tCurrent generation best: {str(population[0])}\n\tCurrent generation worst: {str(population[popSize-1])}\n\tOverall best so far: {str(best)}")
+        print(f"Overall best so far: {str(best)}")
 
     return len(set(population[0]['chromosome'])), population[0]['chromosome'], population[0]['iteration']
