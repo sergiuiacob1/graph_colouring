@@ -4,6 +4,7 @@
 import networkx as nx
 import random
 import numpy as np
+from utils import plot_coloring
 
 
 class Ant:
@@ -107,6 +108,7 @@ class Ant:
                 candidates.append(j)
             max_value = max(heuristic_values)
             for i in range(len(candidates)):
+                # TODO maybe use epsilon comparison? we want the one with max_value
                 if (heuristic_values[i] >= max_value):
                     candidates_available.append(candidates[i])
             candidate = random.choice(candidates_available)
@@ -115,7 +117,8 @@ class Ant:
 
     # return your own pheromone trail
     def pheromone_trail(self):
-        phero_trail = np.zeros((number_nodes, number_nodes), float)
+        number_nodes = max(g_nodes_int)
+        phero_trail = np.zeros((number_nodes + 1, number_nodes + 1), float)
         for i in g_nodes_int:
             for j in g_nodes_int:
                 if (self.colors_assigned[i] == self.colors_assigned[j]):
@@ -175,7 +178,8 @@ def init_colors(g):
 
 
 def init_pheromones(g):
-    phero_matrix = np.ones((number_nodes, number_nodes), float)
+    number_nodes = max(g.nodes)
+    phero_matrix = np.ones((number_nodes+1, number_nodes+1), float)
     for node in g:
         for adj_node in g.neighbors(node):
             phero_matrix[node, adj_node] = 0
@@ -185,7 +189,8 @@ def init_pheromones(g):
 
 
 def adjacency_matrix(g):
-    adj_matrix = np.zeros((number_nodes, number_nodes), int)
+    number_nodes = max(g_nodes_int)
+    adj_matrix = np.zeros((number_nodes+1, number_nodes+1), int)
     for node in g_nodes_int:
         for adj_node in g.neighbors(node):
             adj_matrix[node, adj_node] = 1
@@ -274,6 +279,7 @@ def solve(input_graph, num_ants=10, iter=10, a=1, b=3, decay=0.8):
     phero_matrix = init_pheromones(g)
 
     # ACO_GCP daemon
+    best_colorings = []
     for i in range(number_iterations):
         # create colony
         ants = []
@@ -285,6 +291,7 @@ def solve(input_graph, num_ants=10, iter=10, a=1, b=3, decay=0.8):
         apply_decay()
         # select elite and update si_matrix
         elite_dist, elite_sol = update_elite()
+        best_colorings.append(elite_dist)
         # estimate global solution so far
         if (final_costs == 0):
             final_costs = elite_dist
@@ -294,6 +301,7 @@ def solve(input_graph, num_ants=10, iter=10, a=1, b=3, decay=0.8):
             final_costs = elite_dist
             final_solution = elite_sol
             iterations_needed = i+1
+    plot_coloring("ACO", g, iter, best_colorings)
     return final_costs, final_solution, iterations_needed
 
 
@@ -305,7 +313,7 @@ number_ants = 0
 alpha = 0
 beta = 0
 phero_decay = 0
-adj_matrix = np.zeros((number_nodes, number_nodes), int)
-phero_matrix = np.ones((number_nodes, number_nodes), float)
+adj_matrix = np.zeros((number_nodes+1, number_nodes+1), int)
+phero_matrix = np.ones((number_nodes+1, number_nodes+1), float)
 colors = []
 ants = []

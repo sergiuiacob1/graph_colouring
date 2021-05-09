@@ -21,7 +21,7 @@ def solve_with_method(graph: nx.Graph, max_iter: int, method: str):
 
 
 def solve_with_aco(graph: nx.Graph, max_iter: int):
-    return solve(graph, iter=1, num_ants=1) #TODO
+    return solve(graph, iter=max_iter, num_ants=10)
 
 
 def solve_with_ga(graph: nx.Graph, max_iter: int):
@@ -31,11 +31,11 @@ def solve_with_ga(graph: nx.Graph, max_iter: int):
 def write_results_to_csv(results):
     with open('results.csv', 'w', newline='') as csvfile:
         spamwriter = csv.writer(csvfile, delimiter=',')
-        spamwriter.writerow(['Graph', 'Optimal coloring', 'Max. iters.', 'Method', 'Execution time', 'Colors'])
+        spamwriter.writerow(['Graph', 'Optimal coloring',
+                             'Max. iters.', 'Method', 'Execution time', 'Colors'])
 
         for result in results:
             spamwriter.writerow(result)
-
 
 
 def main():
@@ -44,20 +44,22 @@ def main():
     results = []
     max_iter = 10
 
-    print ("Start coloring...")
-    for graph, optimal_coloring in zip(graphs[2:3], optimal_colorings[2:3]):
+    print("Start coloring...")
+    for graph, optimal_coloring in zip(graphs, optimal_colorings):
         methods = ["ACO"]
         for method in methods:
             print(f"Coloring {graph.name} with {method}")
-            (execution_time, solve_result) = solve_with_method(graph, max_iter, method)
+            (execution_time, solve_result) = solve_with_method(
+                graph, max_iter, method)
             print(f"\tMethod {method} solved in {execution_time} ms")
             print("\t", solve_result)
 
-            results.append([graph.name, optimal_coloring, max_iter, method, execution_time, solve_result[0]])
+            results.append([graph.name, optimal_coloring, max_iter,
+                            method, execution_time, solve_result[0]])
 
-        if len(graph.nodes) < 30:
-            # TODO color nodes with their colors
-            draw_graph(graph, {})
+        # if len(graph.nodes) < 30:
+        #     # TODO color nodes with their colors
+        #     draw_graph(graph, {})
         plt.show()
 
     print("Done!")
