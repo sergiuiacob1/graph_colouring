@@ -82,13 +82,14 @@ def crossover(graph, chromosome1, chromosome2, feasible1):
 
 
 def solveGA(graph: nx.Graph):
-    mutationProb=0.8
-    crossoverProb=0.3
-    popSize=10000
+    mutationProb=0.05
+    crossoverProb=0.8
+    popSize=5000
     numGenerations=2000
-    numOffsprings=50000
+    numOffsprings=70000
     initialColors=[i for i in range(1,graph.number_of_nodes()+1)]
     population=[]
+    best={}
     print(f"GRAPH EDGES: {str(graph.edges())}")
     for _i in range(popSize):
         random.shuffle(initialColors)
@@ -132,15 +133,16 @@ def solveGA(graph: nx.Graph):
         population=[]
         last=[]
         j=0
-        newPopulation.sort(key=lambda x: (x['fitness'], int(x['feasible']==False), x['iteration']))
+        newPopulation.sort(key=lambda x: (x['fitness'], int(x['feasible']==False)))
         print(f"Worst candidate before selection: {str(newPopulation[len(newPopulation)-1])}")
         while len(population)<popSize:
             if str(newPopulation[j])!=str(last):
                 population.append(newPopulation[j])
                 last=newPopulation[j]
             j+=1
-        
-        print(f"Done with generation {i}.\n\tCurrent best: {str(population[0])}\n\tCurrent worst: {str(population[popSize-1])}")
+        if best=={} or best['fitness']>population[0]['fitness']:
+            best=population[0]
+        print(f"Done with generation {i}.\n\tCurrent generation best: {str(population[0])}\n\tCurrent generation worst: {str(population[popSize-1])}\n\tOverall best so far: {str(best)}")
         
 
     return len(set(population[0]['chromosome'])), population[0]['chromosome'], population[0]['iteration']
