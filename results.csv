@@ -1,10 +1,34 @@
 Graph,Optimal coloring,Max. iters.,Method,Execution time,Colors
-Path graph (10),0,10,ACO,237,2
-Complete graph (30),0,10,ACO,912,30
-"Balanced Tree (2, 3)",0,10,ACO,211,2
-"Barbell graph (5, 1)",0,10,ACO,168,5
-Binomial tree (4),0,10,ACO,229,2
-Circular ladder graph (5),0,10,ACO,151,3
-Cycle graph (10),0,10,ACO,147,2
-Star graph (10),0,10,ACO,152,2
-Wheel graph (6),0,10,ACO,134,4
+Path graph (10),0,10,ACO,286,2
+Complete graph (30),0,10,ACO,1001,30
+"Balanced Tree (2, 3)",0,10,ACO,212,2
+"Barbell graph (5, 1)",0,10,ACO,145,5
+Binomial tree (4),0,10,ACO,233,2
+Circular ladder graph (5),0,10,ACO,140,3
+Cycle graph (10),0,10,ACO,148,2
+Star graph (10),0,10,ACO,165,2
+Wheel graph (6),0,10,ACO,142,4
+queen7_7.col.b.in,7,10,ACO,5370,9
+queen8_12.col.b.in,12,10,ACO,20338,13
+myciel4.col.b.in,5,10,ACO,419,5
+myciel5.col.b.in,6,10,ACO,2599,6
+mulsol.i.1.col.b.in,49,10,ACO,59217,47
+queen9_9.col.b.in,10,10,ACO,11861,11
+miles750.col.b.in,31,10,ACO,43232,31
+myciel3.col.b.in,4,10,ACO,155,4
+myciel2.col.b.in,3,10,ACO,119,3
+queen11_11.col.b.in,11,10,ACO,38885,15
+miles250.col.b.in,8,10,ACO,38327,8
+myciel6.col.b.in,7,10,ACO,18703,7
+miles1500.col.b.in,73,10,ACO,50852,73
+queen8_8.col.b.in,9,10,ACO,6263,11
+jean.col.b.in,10,10,ACO,17097,9
+queen6_6.col.b.in,7,10,ACO,1347,8
+david.col.b.in,11,10,ACO,14072,11
+miles1000.col.b.in,42,10,ACO,45962,42
+zeroin.i.1.col.b.in,49,10,ACO,44190,43
+anna.col.b.in,11,10,ACO,50624,11
+miles500.col.b.in,20,10,ACO,41659,21
+huck.col.b.in,11,10,ACO,8496,11
+games120.col.b.in,9,10,ACO,33726,9
+queen5_5.col.b.in,5,10,ACO,543,5

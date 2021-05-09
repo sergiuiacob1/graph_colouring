@@ -22,7 +22,7 @@ def solve_with_method(graph: nx.Graph, max_iter: int, method: str):
 
 
 def solve_with_aco(graph: nx.Graph, max_iter: int):
-    return solve(graph, iter=max_iter, num_ants=10)
+    return solveACO(graph, iter=max_iter, num_ants=10)
 
 
 def solve_with_ga(graph: nx.Graph, max_iter: int):
@@ -31,12 +31,12 @@ def solve_with_ga(graph: nx.Graph, max_iter: int):
 
 def write_results_to_csv(results):
     with open('results.csv', 'w', newline='') as csvfile:
-        spamwriter = csv.writer(csvfile, delimiter=',')
-        spamwriter.writerow(['Graph', 'Optimal coloring',
+        csv_writer = csv.writer(csvfile, delimiter=',')
+        csv_writer.writerow(['Graph', 'Optimal coloring',
                              'Max. iters.', 'Method', 'Execution time', 'Colors'])
 
         for result in results:
-            spamwriter.writerow(result)
+            csv_writer.writerow(result)
 
 
 def main():
@@ -46,10 +46,10 @@ def main():
     max_iter = 10
 
     print("Start coloring...")
-    for graph, optimal_coloring in zip(graphs, optimal_colorings):
+    for i, (graph, optimal_coloring) in enumerate(zip(graphs, optimal_colorings)):
         methods = ["ACO"]
         for method in methods:
-            print(f"Coloring {graph.name} with {method}")
+            print(f"Coloring {graph.name} with {method}, {i}/{len(graphs)}")
             (execution_time, solve_result) = solve_with_method(
                 graph, max_iter, method)
             print(f"\tMethod {method} solved in {execution_time} ms")

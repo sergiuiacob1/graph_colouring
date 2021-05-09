@@ -9,7 +9,7 @@ def get_test_graphs() -> List[nx.Graph]:
 
     names = ["Path graph (10)", "Complete graph (30)", "Balanced Tree (2, 3)", "Barbell graph (5, 1)", "Binomial tree (4)",
              "Circular ladder graph (5)", "Cycle graph (10)", "Star graph (10)", "Wheel graph (6)"]
-    optimal_colorings = [0] * len(names)  # TODO
+    optimal_colorings = [2, 30, 2, 5, 2, 3, 2, 2, 4]
     graphs = [nx.path_graph(10), nx.complete_graph(30), nx.balanced_tree(2, 3), nx.barbell_graph(5, 1), nx.binomial_tree(4),
               nx.circular_ladder_graph(5), nx.cycle_graph(10), nx.star_graph(10), nx.wheel_graph(6)]
 
@@ -33,7 +33,7 @@ def get_test_graphs() -> List[nx.Graph]:
             if line == '?':
                 continue  # ignore graphs for which we don't know the optimal coloring
             new_graph.add_edges_from(edges)
-            if len(new_graph.nodes) > 150:
+            if len(new_graph.nodes) > 200 or len(new_graph.edges) > 5000:
                 continue
             names.append(file)
             optimal_colorings.append(line)
