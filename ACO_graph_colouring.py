@@ -59,7 +59,7 @@ class Ant:
         len_unvisited = len(self.unvisited)
         tabu_colors = []
         # assign color to each unvisited node
-        for i in range(len_unvisited):
+        for _i in range(len_unvisited):
             next = self.next_candidate()
             tabu_colors = []
             # add colors of neighbours to tabu list
@@ -145,7 +145,7 @@ def create_graph(path):
     g = nx.Graph()
     f = open(path)
     n = int(f.readline())
-    for i in range(n):
+    for _i in range(n):
         graph_edge_list = f.readline().split()
         # convert to int
         graph_edge_list[0] = int(graph_edge_list[0])
@@ -242,7 +242,7 @@ def update_elite():
 # param a - relative importance of elite pheromones
 # param b - relative importance of heuristic value (DSAT)
 # param decay - evaporation of pheromones after each iteration
-def solve(input_graph, num_ants=10, iter=10, a=1, b=3, decay=0.8):
+def solveACO(input_graph, num_ants=10, iter=10, a=1, b=3, decay=0.8):
     global g  # graph to be colored (a networkx graph)
     global number_nodes
     global g_nodes_int

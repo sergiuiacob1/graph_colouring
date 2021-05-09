@@ -3,7 +3,8 @@ import time
 import networkx as nx
 import matplotlib.pyplot as plt
 from test_graphs import get_test_graphs
-from ACO_graph_colouring import *
+from ACO_graph_colouring import solveACO, draw_graph
+from GA_graph_coloring import solveGA
 
 
 def solve_with_method(graph: nx.Graph, max_iter: int, method: str):
@@ -25,7 +26,7 @@ def solve_with_aco(graph: nx.Graph, max_iter: int):
 
 
 def solve_with_ga(graph: nx.Graph, max_iter: int):
-    return None
+    return solveGA(graph)
 
 
 def write_results_to_csv(results):
