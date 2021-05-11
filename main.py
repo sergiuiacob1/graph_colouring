@@ -26,7 +26,7 @@ def solve_with_aco(graph: nx.Graph, max_iter: int):
 
 
 def solve_with_ga(graph: nx.Graph, max_iter: int):
-    return solveGA(graph)
+    return solveGA(graph, max_iter)
 
 
 def write_results_to_csv(results):
@@ -43,7 +43,7 @@ def main():
     print("Building graphs...")
     graphs, optimal_colorings = get_test_graphs()
     results = []
-    max_iter = 10
+    max_iter = 150
 
     print("Start coloring...")
     for i, (graph, optimal_coloring) in enumerate(zip(graphs, optimal_colorings)):

@@ -2,7 +2,7 @@ import networkx as nx
 import random
 import numpy as np
 import copy
-
+from utils import plot_coloring
 
 def getFitness(graph: nx.Graph, chromosome: list):
     numColors = len(set(chromosome))
@@ -45,6 +45,7 @@ def mutation(graph, chromosome, fitness, feasible):
                     for color in copyColors:
                         max_color=max(max_color, color)
                     chromosome[node_index] = max_color+1
+                    return chromosome
                 chromosome[node_index]=random.choice(list(colors))
                 return chromosome
     colors = set(chromosome)
@@ -87,16 +88,33 @@ def crossover(graph, chromosome1, chromosome2, feasible1):
         return newChromosome1
     return newChromosome2
 
-#TODO: selection 25% elitism and 75% roulette wheel
-def solveGA(graph: nx.Graph):
-    mutationProb = 0.2
-    crossoverProb = 0.05
+def solveGA(graph: nx.Graph, max_iter: int):
+    mutationProb = 0.5
+    crossoverProb = 0.25
     popSize = 50
-    numGenerations = 20000
+    numGenerations = max_iter
     numOffsprings = 10000
-    initialColors = [i for i in range(1, graph.number_of_nodes()+1)]
     population = []
     best = {}
+    bestColors=[]
+    nodes = graph.nodes()
+    nodes_list=[]
+    for node in nodes:
+        nodes_list.append(node)
+    nodes_list.sort()
+    j=0
+    last_node=nodes_list[len(nodes_list)-1]
+    i=0
+    while j<last_node:
+        if nodes[i]==last_node:
+            break
+        if nodes[i]==j:
+            i+=1
+            j+=1
+            continue
+        graph.add_node(j)
+        j+=1
+    initialColors = [i for i in range(1, graph.number_of_nodes()+1)]
     for _i in range(popSize):
         random.shuffle(initialColors)
         fitness_feasible = getFitness(graph, initialColors)
@@ -160,8 +178,12 @@ def solveGA(graph: nx.Graph):
         population.sort(key=lambda x: (
             x['fitness'], int(x['feasible'] == False)))
         
-        # print(
-        #     f"Done with generation {i}.\n\tCurrent generation best: {str(population[0])}\n\tCurrent generation worst: {str(population[popSize-1])}\n\tOverall best so far: {str(best)}")
-        print(f"Overall best so far: {str(best)}")
+        print(
+            f"Done with generation {i}.\n\tCurrent generation best: {str(population[0])}\n\tCurrent generation worst: {str(population[popSize-1])}\n\tOverall best so far: {str(best)}")
 
-    return len(set(population[0]['chromosome'])), population[0]['chromosome'], population[0]['iteration']
+        bestColors.append(len(set(best['chromosome'])))
+    plot_coloring("GA",graph,max_iter,bestColors)
+    res={}
+    for i,elem in enumerate(best['chromosome']):
+        res[i]=elem
+    return len(set(best['chromosome'])),res, best['iteration']
