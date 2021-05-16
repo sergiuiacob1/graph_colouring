@@ -1,81 +1,81 @@
 Graph,Optimal coloring,Max. iters.,Method,Execution time,Colors
-Path graph (10),2,150,ACO,1582,2
 Path graph (10),2,150,GA,24542,3
-Complete graph (30),30,150,ACO,13473,30
+Path graph (10),2,150,ACO,753,2
 Complete graph (30),30,150,GA,189431,30
-"Balanced Tree (2, 3)",2,150,ACO,2334,2
+Complete graph (30),30,150,ACO,10922,30
 "Balanced Tree (2, 3)",2,150,GA,28243,6
-"Barbell graph (5, 1)",5,150,ACO,1559,5
+"Balanced Tree (2, 3)",2,150,ACO,1516,2
 "Barbell graph (5, 1)",5,150,GA,30026,5
-Binomial tree (4),2,150,ACO,2570,2
+"Barbell graph (5, 1)",5,150,ACO,769,5
 Binomial tree (4),2,150,GA,29598,5
-Circular ladder graph (5),3,150,ACO,1386,3
+Binomial tree (4),2,150,ACO,1703,2
 Circular ladder graph (5),3,150,GA,25818,4
-Cycle graph (10),2,150,ACO,1380,2
+Circular ladder graph (5),3,150,ACO,615,3
 Cycle graph (10),2,150,GA,25825,3
-Star graph (10),2,150,ACO,1531,2
+Cycle graph (10),2,150,ACO,618,2
 Star graph (10),2,150,GA,24927,3
-Wheel graph (6),4,150,ACO,1036,4
+Star graph (10),2,150,ACO,743,2
 Wheel graph (6),4,150,GA,21491,4
-anna.col.b.in,11,150,ACO,794419,11
-anna.col.b.in,11,150,GA,346136,77
-david.col.b.in,11,150,ACO,291896,11
-david.col.b.in,11,150,GA,314383,45
-games120.col.b.in,9,150,ACO,609269,9
-games120.col.b.in,9,150,GA,375148,66
-huck.col.b.in,11,150,ACO,178896,11
-huck.col.b.in,11,150,GA,244451,35
-jean.col.b.in,10,150,ACO,196893,9
-jean.col.b.in,10,150,GA,221644,41
-miles1000.col.b.in,42,150,ACO,705704,42
-miles1000.col.b.in,42,150,GA,1273676,80
-miles250.col.b.in,8,150,ACO,605157,8
-miles250.col.b.in,8,150,GA,250931,74
-miles500.col.b.in,20,150,ACO,671602,20
-miles500.col.b.in,20,150,GA,557603,79
-miles750.col.b.in,31,150,ACO,690524,31
-miles750.col.b.in,31,150,GA,901353,77
-mulsol.i.1.col.b.in,49,150,ACO,907500,47
-mulsol.i.1.col.b.in,49,150,GA,1810028,121
-mulsol.i.2.col.b.in,31,150,ACO,2056435,31
-mulsol.i.2.col.b.in,31,150,GA,2293321,112
-mulsol.i.3.col.b.in,31,150,ACO,1990756,31
-mulsol.i.3.col.b.in,31,150,GA,1566246,113
-mulsol.i.4.col.b.in,31,150,ACO,1693175,31
-mulsol.i.4.col.b.in,31,150,GA,1596913,115
-mulsol.i.5.col.b.in,31,150,ACO,1945335,31
-mulsol.i.5.col.b.in,31,150,GA,1786279,108
-myciel2.col.b.in,3,150,ACO,1100,3
-myciel2.col.b.in,3,150,GA,22099,3
-myciel3.col.b.in,4,150,ACO,1732,4
-myciel3.col.b.in,4,150,GA,32567,4
-myciel4.col.b.in,5,150,ACO,6400,5
-myciel4.col.b.in,5,150,GA,62645,9
-myciel5.col.b.in,6,150,ACO,40403,6
-myciel5.col.b.in,6,150,GA,147662,25
-myciel6.col.b.in,7,150,ACO,301899,7
-myciel6.col.b.in,7,150,GA,392174,57
-myciel7.col.b.in,8,150,ACO,2170177,8
-myciel7.col.b.in,8,150,GA,1007267,116
-queen11_11.col.b.in,11,150,ACO,569778,14
-queen11_11.col.b.in,11,150,GA,797991,69
-queen13_13.col.b.in,13,150,ACO,1543582,17
-queen13_13.col.b.in,13,150,GA,1357636,103
-queen5_5.col.b.in,5,150,ACO,7531,5
-queen5_5.col.b.in,5,150,GA,89009,14
-queen6_6.col.b.in,7,150,ACO,18548,8
-queen6_6.col.b.in,7,150,GA,142977,19
-queen7_7.col.b.in,7,150,ACO,43881,9
+Wheel graph (6),4,150,ACO,298,4
 queen7_7.col.b.in,7,150,GA,215909,26
-queen8_12.col.b.in,12,150,ACO,291479,13
-queen8_12.col.b.in,12,150,GA,563797,53
-queen8_8.col.b.in,9,150,ACO,93513,10
-queen8_8.col.b.in,9,150,GA,311484,38
-queen9_9.col.b.in,10,150,ACO,177919,11
-queen9_9.col.b.in,10,150,GA,442838,47
-zeroin.i.1.col.b.in,49,150,ACO,663414,43
-zeroin.i.1.col.b.in,49,150,GA,1692562,131
-zeroin.i.2.col.b.in,30,150,ACO,1296232,28
+queen7_7.col.b.in,7,150,ACO,36354,9
 zeroin.i.2.col.b.in,30,150,GA,1627435,134
-zeroin.i.3.col.b.in,30,150,ACO,1345325,28
+zeroin.i.2.col.b.in,30,150,ACO,1070635,28
 zeroin.i.3.col.b.in,30,150,GA,1624447,120
+zeroin.i.3.col.b.in,30,150,ACO,1034578,28
+queen8_12.col.b.in,12,150,GA,563797,53
+queen8_12.col.b.in,12,150,ACO,250559,13
+myciel4.col.b.in,5,150,GA,62645,9
+myciel4.col.b.in,5,150,ACO,4395,5
+myciel5.col.b.in,6,150,GA,147662,25
+myciel5.col.b.in,6,150,ACO,29908,6
+queen13_13.col.b.in,13,150,GA,1357636,103
+queen13_13.col.b.in,13,150,ACO,1212392,17
+mulsol.i.1.col.b.in,49,150,GA,1810028,121
+mulsol.i.1.col.b.in,49,150,ACO,704406,48
+queen9_9.col.b.in,10,150,GA,442838,47
+queen9_9.col.b.in,10,150,ACO,168846,11
+miles750.col.b.in,31,150,GA,901353,77
+miles750.col.b.in,31,150,ACO,559709,31
+myciel3.col.b.in,4,150,GA,32567,4
+myciel3.col.b.in,4,150,ACO,841,4
+myciel2.col.b.in,3,150,GA,22099,3
+myciel2.col.b.in,3,150,ACO,216,3
+queen11_11.col.b.in,11,150,GA,797991,69
+queen11_11.col.b.in,11,150,ACO,469824,14
+miles250.col.b.in,8,150,GA,250931,74
+miles250.col.b.in,8,150,ACO,489677,8
+mulsol.i.3.col.b.in,31,150,GA,1566246,113
+mulsol.i.3.col.b.in,31,150,ACO,1413226,31
+mulsol.i.2.col.b.in,31,150,GA,2293321,112
+mulsol.i.2.col.b.in,31,150,ACO,1818241,31
+myciel7.col.b.in,8,150,GA,1007267,116
+myciel7.col.b.in,8,150,ACO,1718535,8
+myciel6.col.b.in,7,150,GA,392174,57
+myciel6.col.b.in,7,150,ACO,223000,7
+queen8_8.col.b.in,9,150,GA,311484,38
+queen8_8.col.b.in,9,150,ACO,79153,10
+jean.col.b.in,10,150,GA,221644,41
+jean.col.b.in,10,150,ACO,119546,10
+queen6_6.col.b.in,7,150,GA,142977,19
+queen6_6.col.b.in,7,150,ACO,16313,7
+david.col.b.in,11,150,GA,314383,45
+david.col.b.in,11,150,ACO,167482,11
+miles1000.col.b.in,42,150,GA,1273676,80
+miles1000.col.b.in,42,150,ACO,595607,42
+zeroin.i.1.col.b.in,49,150,GA,1692562,131
+zeroin.i.1.col.b.in,49,150,ACO,559707,43
+anna.col.b.in,11,150,GA,346136,77
+anna.col.b.in,11,150,ACO,623065,11
+mulsol.i.4.col.b.in,31,150,GA,1596913,115
+mulsol.i.4.col.b.in,31,150,ACO,1387313,31
+mulsol.i.5.col.b.in,31,150,GA,1786279,108
+mulsol.i.5.col.b.in,31,150,ACO,2040039,31
+miles500.col.b.in,20,150,GA,557603,79
+miles500.col.b.in,20,150,ACO,522075,20
+huck.col.b.in,11,150,GA,244451,35
+huck.col.b.in,11,150,ACO,106539,11
+games120.col.b.in,9,150,GA,375148,66
+games120.col.b.in,9,150,ACO,430808,9
+queen5_5.col.b.in,5,150,GA,89009,14
+queen5_5.col.b.in,5,150,ACO,6034,5

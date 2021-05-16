@@ -74,8 +74,8 @@ class Ant:
         # save distance of the current solution
         self.distance = len(set(self.colors_assigned.values()))
         # consitency check
-        ##self.number_colisions = self.colisions()
-        ##print('colisions: ' + str(self.number_colisions))
+        self.number_colisions = self.colisions()
+        #print('colisions: ' + str(self.number_colisions))
 
     # return the number of different colors among the neighbours of node
     def dsat(self, node=None):
@@ -221,18 +221,21 @@ def update_elite():
     global phero_matrix
     # select elite
     best_dist = 0
+    best_colisions = None
     elite_ant = None
     for ant in ants:
         if (best_dist == 0):
             best_dist = ant.distance
+            best_colisions = ant.number_colisions
             elite_ant = ant
-        elif (ant.distance < best_dist):
+        elif (ant.distance < best_dist and ant.number_colisions <= best_colisions) or (ant.number_colisions < best_colisions):
             best_dist = ant.distance
+            best_colisions = ant.number_colisions
             elite_ant = ant
     # update global phero_matrix
     elite_phero_matrix = elite_ant.pheromone_trail()
     phero_matrix = phero_matrix + elite_phero_matrix
-    return elite_ant.distance, elite_ant.colors_assigned
+    return elite_ant.distance, elite_ant.colors_assigned, elite_ant.number_colisions
 
 
 # ------------- entry point -------------
@@ -266,6 +269,7 @@ def solveACO(input_graph, num_ants=10, iter=10, a=1, b=3, decay=0.8):
     # results
     final_solution = {}  # coloring of the graph
     final_costs = 0  # number of colors in the solution
+    final_colisions = None
     iterations_needed = 0
 
     # init
@@ -290,16 +294,19 @@ def solveACO(input_graph, num_ants=10, iter=10, a=1, b=3, decay=0.8):
         # apply decay rate
         apply_decay()
         # select elite and update si_matrix
-        elite_dist, elite_sol = update_elite()
+        elite_dist, elite_sol, elite_colisions = update_elite()
         best_colorings.append(elite_dist)
         # estimate global solution so far
         if (final_costs == 0):
             final_costs = elite_dist
             final_solution = elite_sol
+            final_colisions = elite_colisions
             iterations_needed = i+1
-        elif (elite_dist < final_costs):
+        elif (elite_dist < final_costs and elite_colisions <= final_colisions) or elite_colisions < final_colisions:
             final_costs = elite_dist
             final_solution = elite_sol
+            final_colisions = elite_colisions
+            print(f"Updated best ant to {(final_costs, final_colisions)}")
             iterations_needed = i+1
     plot_coloring("ACO", g, iter, best_colorings)
     return final_costs, final_solution, iterations_needed

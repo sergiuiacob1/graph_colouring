@@ -5,8 +5,6 @@ from typing import List
 
 def get_test_graphs() -> List[nx.Graph]:
     # return nx.graph_atlas_g()[1:100]
-    # TODO add graph names
-
     names = ["Path graph (10)", "Complete graph (30)", "Balanced Tree (2, 3)", "Barbell graph (5, 1)", "Binomial tree (4)",
              "Circular ladder graph (5)", "Cycle graph (10)", "Star graph (10)", "Wheel graph (6)"]
     optimal_colorings = [2, 30, 2, 5, 2, 3, 2, 2, 4]
