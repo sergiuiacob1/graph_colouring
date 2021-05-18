@@ -20,9 +20,9 @@ Wheel graph (6),4,150,ACO,298,4
 queen7_7.col.b.in,7,150,GA,215909,26
 queen7_7.col.b.in,7,150,ACO,36354,9
 zeroin.i.2.col.b.in,30,150,GA,1627435,134
-zeroin.i.2.col.b.in,30,150,ACO,1070635,28
+zeroin.i.2.col.b.in,30,150,ACO,1070635,31
 zeroin.i.3.col.b.in,30,150,GA,1624447,120
-zeroin.i.3.col.b.in,30,150,ACO,1034578,28
+zeroin.i.3.col.b.in,30,150,ACO,1034578,32
 queen8_12.col.b.in,12,150,GA,563797,53
 queen8_12.col.b.in,12,150,ACO,250559,13
 myciel4.col.b.in,5,150,GA,62645,9
@@ -32,7 +32,7 @@ myciel5.col.b.in,6,150,ACO,29908,6
 queen13_13.col.b.in,13,150,GA,1357636,103
 queen13_13.col.b.in,13,150,ACO,1212392,17
 mulsol.i.1.col.b.in,49,150,GA,1810028,121
-mulsol.i.1.col.b.in,49,150,ACO,704406,48
+mulsol.i.1.col.b.in,49,150,ACO,704406,49
 queen9_9.col.b.in,10,150,GA,442838,47
 queen9_9.col.b.in,10,150,ACO,168846,11
 miles750.col.b.in,31,150,GA,901353,77
@@ -64,7 +64,7 @@ david.col.b.in,11,150,ACO,167482,11
 miles1000.col.b.in,42,150,GA,1273676,80
 miles1000.col.b.in,42,150,ACO,595607,42
 zeroin.i.1.col.b.in,49,150,GA,1692562,131
-zeroin.i.1.col.b.in,49,150,ACO,559707,43
+zeroin.i.1.col.b.in,49,150,ACO,559707,49
 anna.col.b.in,11,150,GA,346136,77
 anna.col.b.in,11,150,ACO,623065,11
 mulsol.i.4.col.b.in,31,150,GA,1596913,115
