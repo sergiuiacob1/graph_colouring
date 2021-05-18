@@ -30,7 +30,7 @@ def solve_with_ga(graph: nx.Graph, max_iter: int):
 
 
 def write_results_to_csv(results):
-    with open('results.csv', 'w', newline='') as csvfile:
+    with open('results2.csv', 'w', newline='') as csvfile:
         csv_writer = csv.writer(csvfile, delimiter=',')
         csv_writer.writerow(['Graph', 'Optimal coloring',
                              'Max. iters.', 'Method', 'Execution time', 'Colors'])
@@ -43,11 +43,11 @@ def main():
     print("Building graphs...")
     graphs, optimal_colorings = get_test_graphs()
     results = []
-    max_iter = 150
+    max_iter = 250
 
     print("Start coloring...")
     for i, (graph, optimal_coloring) in enumerate(zip(graphs, optimal_colorings)):
-        methods = ["ACO", "GA"]
+        methods = ["GA"]
         for method in methods:
             print(f"Coloring {graph.name} with {method}, {i}/{len(graphs)}")
             (execution_time, solve_result) = solve_with_method(

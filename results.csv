@@ -1,81 +1,81 @@
 Graph,Optimal coloring,Max. iters.,Method,Execution time,Colors
-Path graph (10),2,150,GA,24542,3
+Path graph (10),2,150,GA,10168,2
 Path graph (10),2,150,ACO,753,2
-Complete graph (30),30,150,GA,189431,30
+Complete graph (30),30,150,GA,162603,30
 Complete graph (30),30,150,ACO,10922,30
-"Balanced Tree (2, 3)",2,150,GA,28243,6
+"Balanced Tree (2, 3)",2,150,GA,12559,2
 "Balanced Tree (2, 3)",2,150,ACO,1516,2
-"Barbell graph (5, 1)",5,150,GA,30026,5
+"Barbell graph (5, 1)",5,150,GA,20979,5
 "Barbell graph (5, 1)",5,150,ACO,769,5
-Binomial tree (4),2,150,GA,29598,5
+Binomial tree (4),2,150,GA,13609,2
 Binomial tree (4),2,150,ACO,1703,2
-Circular ladder graph (5),3,150,GA,25818,4
+Circular ladder graph (5),3,150,GA,17251,3
 Circular ladder graph (5),3,150,ACO,615,3
-Cycle graph (10),2,150,GA,25825,3
+Cycle graph (10),2,150,GA,9637,2
 Cycle graph (10),2,150,ACO,618,2
-Star graph (10),2,150,GA,24927,3
+Star graph (10),2,150,GA,10335,2
 Star graph (10),2,150,ACO,743,2
-Wheel graph (6),4,150,GA,21491,4
+Wheel graph (6),4,150,GA,14486,4
 Wheel graph (6),4,150,ACO,298,4
-queen7_7.col.b.in,7,150,GA,215909,26
+queen7_7.col.b.in,7,150,GA,84874,12
 queen7_7.col.b.in,7,150,ACO,36354,9
-zeroin.i.2.col.b.in,30,150,GA,1627435,134
+zeroin.i.2.col.b.in,30,150,GA,579032,56
 zeroin.i.2.col.b.in,30,150,ACO,1070635,31
-zeroin.i.3.col.b.in,30,150,GA,1624447,120
+zeroin.i.3.col.b.in,30,150,GA,594964,52
 zeroin.i.3.col.b.in,30,150,ACO,1034578,32
-queen8_12.col.b.in,12,150,GA,563797,53
+queen8_12.col.b.in,12,150,GA,344061,16
 queen8_12.col.b.in,12,150,ACO,250559,13
-myciel4.col.b.in,5,150,GA,62645,9
+myciel4.col.b.in,5,150,GA,20268,5
 myciel4.col.b.in,5,150,ACO,4395,5
-myciel5.col.b.in,6,150,GA,147662,25
+myciel5.col.b.in,6,150,GA,49587,7
 myciel5.col.b.in,6,150,ACO,29908,6
-queen13_13.col.b.in,13,150,GA,1357636,103
+queen13_13.col.b.in,13,150,GA,1044134,21
 queen13_13.col.b.in,13,150,ACO,1212392,17
-mulsol.i.1.col.b.in,49,150,GA,1810028,121
+mulsol.i.1.col.b.in,49,150,GA,1297159,64
 mulsol.i.1.col.b.in,49,150,ACO,704406,49
-queen9_9.col.b.in,10,150,GA,442838,47
+queen9_9.col.b.in,10,150,GA,180355,16
 queen9_9.col.b.in,10,150,ACO,168846,11
-miles750.col.b.in,31,150,GA,901353,77
+miles750.col.b.in,31,150,GA,676100,37
 miles750.col.b.in,31,150,ACO,559709,31
-myciel3.col.b.in,4,150,GA,32567,4
+myciel3.col.b.in,4,150,GA,15993,4
 myciel3.col.b.in,4,150,ACO,841,4
-myciel2.col.b.in,3,150,GA,22099,3
+myciel2.col.b.in,3,150,GA,10650,3
 myciel2.col.b.in,3,150,ACO,216,3
-queen11_11.col.b.in,11,150,GA,797991,69
+queen11_11.col.b.in,11,150,GA,396384,20
 queen11_11.col.b.in,11,150,ACO,469824,14
-miles250.col.b.in,8,150,GA,250931,74
+miles250.col.b.in,8,150,GA,81874,40
 miles250.col.b.in,8,150,ACO,489677,8
-mulsol.i.3.col.b.in,31,150,GA,1566246,113
+mulsol.i.3.col.b.in,31,150,GA,770783,46
 mulsol.i.3.col.b.in,31,150,ACO,1413226,31
-mulsol.i.2.col.b.in,31,150,GA,2293321,112
+mulsol.i.2.col.b.in,31,150,GA,808299,42
 mulsol.i.2.col.b.in,31,150,ACO,1818241,31
-myciel7.col.b.in,8,150,GA,1007267,116
+myciel7.col.b.in,8,150,GA,490636,30
 myciel7.col.b.in,8,150,ACO,1718535,8
-myciel6.col.b.in,7,150,GA,392174,57
+myciel6.col.b.in,7,150,GA,298237,13
 myciel6.col.b.in,7,150,ACO,223000,7
-queen8_8.col.b.in,9,150,GA,311484,38
+queen8_8.col.b.in,9,150,GA,115341,15
 queen8_8.col.b.in,9,150,ACO,79153,10
-jean.col.b.in,10,150,GA,221644,41
+jean.col.b.in,10,150,GA,146346,12
 jean.col.b.in,10,150,ACO,119546,10
-queen6_6.col.b.in,7,150,GA,142977,19
+queen6_6.col.b.in,7,150,GA,51142,11
 queen6_6.col.b.in,7,150,ACO,16313,7
-david.col.b.in,11,150,GA,314383,45
+david.col.b.in,11,150,GA,175231,15
 david.col.b.in,11,150,ACO,167482,11
-miles1000.col.b.in,42,150,GA,1273676,80
+miles1000.col.b.in,42,150,GA,1202184,46
 miles1000.col.b.in,42,150,ACO,595607,42
-zeroin.i.1.col.b.in,49,150,GA,1692562,131
+zeroin.i.1.col.b.in,49,150,GA,1394229,69
 zeroin.i.1.col.b.in,49,150,ACO,559707,49
-anna.col.b.in,11,150,GA,346136,77
+anna.col.b.in,11,150,GA,129989,24
 anna.col.b.in,11,150,ACO,623065,11
-mulsol.i.4.col.b.in,31,150,GA,1596913,115
+mulsol.i.4.col.b.in,31,150,GA,798568,46
 mulsol.i.4.col.b.in,31,150,ACO,1387313,31
-mulsol.i.5.col.b.in,31,150,GA,1786279,108
+mulsol.i.5.col.b.in,31,150,GA,901917,45
 mulsol.i.5.col.b.in,31,150,ACO,2040039,31
-miles500.col.b.in,20,150,GA,557603,79
+miles500.col.b.in,20,150,GA,515336,22
 miles500.col.b.in,20,150,ACO,522075,20
-huck.col.b.in,11,150,GA,244451,35
+huck.col.b.in,11,150,GA,64686,12
 huck.col.b.in,11,150,ACO,106539,11
-games120.col.b.in,9,150,GA,375148,66
+games120.col.b.in,9,150,GA,298163,9
 games120.col.b.in,9,150,ACO,430808,9
-queen5_5.col.b.in,5,150,GA,89009,14
+queen5_5.col.b.in,5,150,GA,31593,8
 queen5_5.col.b.in,5,150,ACO,6034,5
